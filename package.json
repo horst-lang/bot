@@ -10,8 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^13.3.1",
-    "dotenv": "^10.0.0",
-    "events": "^3.3.0",
-    "fs": "^0.0.1-security"
+    "events": "^3.3.0"
   }
 }
