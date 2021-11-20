@@ -2,3 +2,4 @@ node_modules/
 commit.sh
 package-lock.json
 config.json
+addFiles/modtest.js
