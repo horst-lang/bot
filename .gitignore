@@ -1,3 +1,4 @@
 config.json
 node_modules/
 commit.sh
+package-lock.json

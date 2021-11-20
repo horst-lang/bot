@@ -1,4 +1,4 @@
-const { MessageEmbed, MessageActionRow, MessageButton, Interaction } = require('discord.js');
+const { MessageEmbed, MessageActionRow, MessageButton, Interaction, MessageSelectMenu } = require('discord.js');
 
 module.exports = {
 	name: 'help',
@@ -12,7 +12,7 @@ module.exports = {
 		.setThumbnail('https://i.ibb.co/NtvQ0KW/Frame-4horst.png')
 		.setTimestamp(dt)
 		.addFields(
-			{ name: '⚒️Utilities', value: '`h!help` - Shows Horst commands/infos\n`h!feedback <feedback>` - Sends feedback to the Horst developers.'},
+			{ name: '⚒️Utilities', value: '`h!help` - Shows Horst commands/infos\n`h!feedback <feedback>` - Sends feedback to the Horst developers.'}
 		)
 		.setFooter(`Requested by ${message.author.tag}`, `${message.author.avatarURL()}`)
 		
@@ -22,13 +22,33 @@ module.exports = {
 					.setLabel('Website')
 					.setStyle('LINK')
 					.setURL('https://horstlang.org')
-					.setDisabled('true'),
+					.setDisabled('false'),
 				new MessageButton()
 					.setLabel('Docs')
 					.setStyle('LINK')
 					.setURL('https://docs.horstlang.org')
-					.setDisabled('true')
-			);		
-	message.reply({embeds: [helpEmb], components: [links]});
+					.setDisabled('false')
+			);
+		const select = new MessageActionRow()
+			.addComponents(
+				new MessageSelectMenu()
+				.setCustomId('supportSelect')
+				.setPlaceholder('Nothing selected')
+				.addOptions([
+					{
+						label: 'Open a ticket',
+						description: 'Opens a support ticket in which you can directly communicate with Horst support',
+						value: 'ticket',
+						emoji: '🎫'
+					},
+					{
+						label: 'Apply as mod',
+						description: 'Apply as a server Moderator',
+						value: 'mod',
+						emoji: '👮'
+					}
+				])
+			)		
+	message.reply({embeds: [helpEmb], components: [links,select]});
 	},
 };
