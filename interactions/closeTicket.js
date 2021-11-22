@@ -27,7 +27,7 @@ module.exports = {
 
 			message.reply({embeds: [closeEmb], components: [closeBtns], ephemeral: true})
 		}else{
-			message.reply({})
+			message.reply({content: 'Tickets can only be closed by team members.', ephemeral: true})
 		}
         message.channel
 	},
