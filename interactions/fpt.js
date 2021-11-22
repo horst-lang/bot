@@ -4,7 +4,7 @@ module.exports = {
     name: 'favPubTtodo',
     description: 'Favourite, publicize, todo',
     execute(message) {
-        if(message.customId ===  'favBtn') {
+        if(message.customId ===  'pinBtn') {
             const delBtn = new MessageActionRow()
                 .setComponents(
                     new MessageButton()

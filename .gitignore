@@ -3,3 +3,4 @@ commit.sh
 package-lock.json
 config.json
 interactions/modtest.js
+suggestions.json

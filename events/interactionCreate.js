@@ -22,7 +22,7 @@ module.exports = {
             }else if (interaction.customId === 'openTicket') {
                 const cmd = require('../interactions/ticket');
                 cmd.execute(interaction);
-            }else if (interaction.customId === 'favBtn' || interaction.customId === 'pubBtn') {
+            }else if (interaction.customId === 'pinBtn' || interaction.customId === 'pubBtn') {
                 const cmd = require('../interactions/fpt');
                 cmd.execute(interaction);
             }else if (interaction.customId === 'delBtn') {

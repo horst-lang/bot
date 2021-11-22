@@ -13,9 +13,9 @@ module.exports = {
 		const favPub = new MessageActionRow()
 			.addComponents(
 				new MessageButton()
-					.setEmoji('⭐')
+					.setEmoji('📌')
 					.setStyle('SUCCESS')
-					.setCustomId('favBtn'),
+					.setCustomId('pinBtn'),
 				new MessageButton()
 					.setEmoji('📨')
 					.setStyle('PRIMARY')
