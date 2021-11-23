@@ -1,7 +1,6 @@
 const { MessageEmbed, MessageActionRow, MessageButton, Interaction } = require("discord.js");
 module.exports = {
-	name: 'closeTicket',
-	description: 'Close the current ticket',
+	ids: ['closeTick'],
 	execute(message) {
 		if(message.member.roles.cache.has('900122479211720754')) {
 			let dt = new Date;

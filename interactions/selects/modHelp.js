@@ -1,8 +1,8 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-    name: 'modHelp',
-    description: 'Shows the moderator/developer-only command list.',
+    ids: ['supportSelect'],
+    value: 'modList',
     execute(message) {
         const dt = new Date
         const modHelpEmb = new MessageEmbed()
