@@ -7,8 +7,8 @@ module.exports = {
                 if (interaction.values[0] === 'ticket') {
                     const cmd = require('../interactions/ticket');
                     cmd.execute(interaction);
-                }else if (interaction.values[0] === 'mod') {
-                    const cmd = require('../interactions/applymod');
+                }else if (interaction.values[0] === 'modList') {
+                    const cmd = require('../interactions/modHelp');
                     cmd.execute(interaction)
                 }
             }
