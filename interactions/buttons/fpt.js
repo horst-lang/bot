@@ -1,8 +1,7 @@
 const { MessageActionRow, MessageButton } = require("discord.js");
 const fs = require('fs');
 module.exports = {
-    name: 'favPubTtodo',
-    description: 'Favourite, publicize, todo',
+    ids: ['pinBtn','pubBtn'],
     execute(message) {
         if(message.customId ===  'pinBtn') {
             const delBtn = new MessageActionRow()
@@ -34,7 +33,7 @@ module.exports = {
             
             let surveyChan = message.guild.channels.cache.get('909195143536574534');
             surveyChan.send({embeds: [message.message.embeds[0]], components: [upDownBtn]}).then((msg) => {
-                let sugs = require('../suggestions.json');
+                let sugs = require('../../suggestions.json');
                 for (let i = 0; i < sugs.length; i++) {
                     if (sugs[i].feedId === message.message.id) {
                         message.reply({content: `You've already published that!`, ephemeral: true});
@@ -44,7 +43,7 @@ module.exports = {
                 }
                 let obj = {"id":`${msg.id}`,"votes":0,"voters":[],"feedId":`${message.message.id}`}
                 sugs.push(obj)
-                fs.writeFileSync(`${__dirname}/../suggestions.json`, JSON.stringify(sugs));
+                fs.writeFileSync(`${__dirname}/../../suggestions.json`, JSON.stringify(sugs));
                 
                 message.reply({content: 'Published!', ephemeral: true});
             })

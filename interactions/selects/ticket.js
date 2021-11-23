@@ -1,7 +1,7 @@
 const { MessageEmbed, MessageActionRow, MessageButton, Interaction } = require("discord.js");
 module.exports = {
-	name: 'ticket',
-	description: 'Recieve help by a member of the Horst support team',
+  ids: ['supportSelect'],
+  value: 'ticket',
 	execute(message) {
     
     message.guild.channels.create(`ticket-${message.user.username.toLowerCase()}`, {

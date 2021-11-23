@@ -1,7 +1,6 @@
 const { MessageEmbed, MessageActionRow, MessageButton, Interaction } = require("discord.js");
 module.exports = {
-    name: 'ccclose',
-    description: 'Confirm/Cancel the closing of the ticket',
+    ids: ['cancelClose','confirmClose'],
     execute(message) {
         if(message.customId === 'cancelClose') {
             message.reply({content: 'Ok, cancelled!', ephemeral: true})

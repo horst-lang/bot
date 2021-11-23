@@ -1,7 +1,6 @@
 
 module.exports = {
-    name: 'delete',
-    description: 'Delete a message',
+    ids: ['delBtn'],
     execute(message) {
         message.reply({content: 'Deleted!', ephemeral: true});
         message.message.delete();

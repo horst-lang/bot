@@ -1,11 +1,10 @@
 const { MessageEmbed } = require('discord.js');
 const fs = require('fs');
 module.exports = {
-    name: 'Up/Downvote',
-    description: 'Up/Downvote a suggestion',
+    ids: ['upBtn','downBtn','surQuestBtn'],
     execute(message) {
         const dt = new Date
-        const sugs = require('../suggestions.json');
+        const sugs = require('../../suggestions.json');
             sugs.forEach(elem => {
                 if (message.customId === 'upBtn' || message.customId === 'downBtn') {
                     if (elem.id === message.message.id && elem.voters.includes(message.user.id)) {
@@ -32,7 +31,7 @@ module.exports = {
                 }
             })
         function write(sugs,message) {
-            fs.writeFileSync(`${__dirname}/../suggestions.json`, JSON.stringify(sugs));
+            fs.writeFileSync(`${__dirname}/../../suggestions.json`, JSON.stringify(sugs));
             message.reply({content: `Thanks for your feedback!`, ephemeral: true});
         }
     }

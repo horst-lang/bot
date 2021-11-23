@@ -6,15 +6,15 @@ module.exports = {
 	execute(message, args) {
 		let dt = new Date
 		const helpEmb = new MessageEmbed()
-		.setColor('#B452FF')
-		.setTitle('Help menu')
-		.setDescription(`Welcome to **Horst**, the easy and open-source programming language!\n \n**Command list:**\n \n`)
-		.setThumbnail('https://i.ibb.co/NtvQ0KW/Frame-4horst.png')
-		.setTimestamp(dt)
-		.addFields(
-			{ name: '⚒️Utilities', value: '`h!help` - Shows Horst commands/infos\n`h!feedback <feedback>` - Sends feedback to the Horst developers.'}
-		)
-		.setFooter(`Requested by ${message.author.tag}`, `${message.author.avatarURL()}`)
+			.setColor('#B452FF')
+			.setTitle('Help menu')
+			.setDescription(`Welcome to **Horst**, the easy and open-source programming language!\n \n**Command list:**\n \n`)
+			.setThumbnail('https://i.ibb.co/NtvQ0KW/Frame-4horst.png')
+			.setTimestamp(dt)
+			.addFields(
+				{ name: '⚒️Utilities', value: '`h!help` - Shows Horst commands/infos\n`h!feedback <feedback>` - Sends feedback to the Horst developers.'}
+			)
+			.setFooter(`Requested by ${message.author.tag}`, `${message.author.avatarURL()}`)
 		
 		const links = new MessageActionRow()
 			.addComponents(
@@ -42,9 +42,9 @@ module.exports = {
 						emoji: '🎫'
 					},
 					{
-						label: 'Apply as mod',
-						description: 'Apply as a server Moderator',
-						value: 'mod',
+						label: 'Mod command list',
+						description: 'Shows the moderator/developer-only command list.',
+						value: 'modList',
 						emoji: '👮'
 					}
 				])
