@@ -3,7 +3,7 @@ module.exports = {
 	name: 'feedback',
 	description: 'Give feedback on Horst',
 	execute(message, args) {
-		let feedback = args.toString().replaceAll(',', ' ');
+		let feedback = args.join(" ");
 		const feedbackEmb = new MessageEmbed()
 			.setColor('#B452FF')
 			.setTitle('New feedback')
